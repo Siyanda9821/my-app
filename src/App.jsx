@@ -16,7 +16,8 @@ export default function App() {
 
       <ColorGame />
 */}
-      <MovieList /> 
+      <MovieList />
+      <Movie />
     </div>
   );
 }
