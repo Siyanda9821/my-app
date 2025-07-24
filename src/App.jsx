@@ -10,14 +10,13 @@ export default function App() {
   console.log("Hi");
   return (
     <div className="App">
-      {/*<MsgList />
+      <MsgList />
 
       <UserList />
 
       <ColorGame />
-*/}
-      <MovieList />
-      <Movie />
+
+      {/* <MovieList /> */}
     </div>
   );
 }
