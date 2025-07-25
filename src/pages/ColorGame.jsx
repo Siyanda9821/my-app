@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ColorBox } from "./ColorBox";
+import { ColorBox } from "../components/ColorBox";
 
 // State Changes -> Update UI (useState)
 // Typing event -> Listens -> onChange, onInput, onKeyPress
@@ -20,16 +20,17 @@ export function ColorGame() {
   };
 
   // Task 1.1 - List these colors using ColorBox - map
+  // Array of strings
   const [colors, setColors] = useState(INITIAL_COLORS);
   // console.log("Re-rendered");
   const addColor = (event) => {
     event.preventDefault(); // Prevent Refesh Behaviour
+    //  Copy the existing colors + New color
     setColors([...colors, color]);
   };
 
   return (
-    <div>
-      {/* Copy the existing colors + New color */}
+    <>
       <form onSubmit={addColor} className="color-form-container">
         <input
           style={styles}
@@ -43,10 +44,10 @@ export function ColorGame() {
 
       {/* Dictate from Parent the UI */}
       <div className="color-box-list-container">
-        {colors.map((clr) => (
-          <ColorBox clr={clr} />
+        {colors.map((clr, index) => (
+          <ColorBox key={index} clr={clr} />
         ))}
       </div>
-    </div>
+    </>
   );
 }

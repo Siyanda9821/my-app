@@ -1,4 +1,4 @@
-import { User } from "./User";
+import { User } from "../components/User";
 
 // Smart (Data) & Presentation Component - Pattern
 // Task: Use map & Make it DRY
@@ -22,8 +22,8 @@ export function UserList() {
   ];
   return (
     <div className="user-list-container">
-      {users.map((user) => (
-        <User {...user} />
+      {users.map((user, index) => (
+        <User key={index} {...user} />
       ))}
     </div>
   );
